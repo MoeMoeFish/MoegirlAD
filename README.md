@@ -25,7 +25,5 @@ Show advertisement in moegirl
 
 `$wgMoegirlADSideBarADCode = "advertice code in here";`   // 广告提供商给的代码，显示在Sidebar
 
-`
-
 
 
