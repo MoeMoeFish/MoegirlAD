@@ -18,7 +18,7 @@ $wgExtensionCredits['parserhook'][] = array(
  *      - determine if show advertisement in moegirl.
  *
  * $wgMoegirlADTopADCode
- *      - The adverticement code form the advertising company in top bar
+ *      - the adverticement code form the advertising company in top bar
  *      E.g.
  *      $wgMoegirlADADCode = <<<EOD
  * <!-- 728*90 -->
@@ -30,12 +30,24 @@ $wgExtensionCredits['parserhook'][] = array(
  * EOD;
  *
  * $wgMoegirlADBottomADCode
-        - The adverticement code in bottom bar
+ *      - the adverticement code in bottom bar
+ *
+ * $wgMoegirADFooterADCode
+ *      - the adverticement code used to show in below of the footer
+ * 
+ * $wgMoegirlADSideBarADName
+ *      - the side bar group name
+ *
+ * $wgMoegirlADSideBarADCode
+ *      - the adverticement code used to show in the bottom of the side bar
  * 
  */
 $wgMoegirlADEnabled  = true;
 $wgMoegirlADTopADCode = "";
 $wgMoegirlADBottomADCode = "";
+$wgMoegirlADFooterADCode = "";
+$wgMoegirlADSideBarADName = "";
+$wgMoegirlADSideBarADCode = "";
 
 
 
@@ -44,5 +56,7 @@ $wgAutoloadClasses['MoegirlADHooks'] = __DIR__ . '/MoegirlAD.hooks.php';
 
 $wgHooks['SkinAfterContent'][] = 'MoegirlADHooks::onSkinAfterContent';
 $wgHooks['SiteNoticeAfter'][] = 'MoegirlADHooks::onSiteNoticeAfter';
+$wgHooks['SkinAfterBottomScripts'][] = 'MoegirlADHooks::onSkinAfterBottomScripts';
+$wgHooks['SkinBuildSidebar'][] = 'MoegirlADHooks::onSkinBuildSidebar';
 
 ?>

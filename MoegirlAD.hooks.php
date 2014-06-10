@@ -10,11 +10,11 @@
  */
 final class MoegirlADHooks {
 
-  public static function onSkinAfterContent(&$data, Skin $skin) {
+  public static function onSkinAfterContent(&$data, $skin) {
     global $wgMoegirlADBottomADCode;
 
     if (MoegirlADHooks::shouldShowADs()) {
-      $data .= $wgMoegirlADTopADCode; 
+      $data .= $wgMoegirlADBottomADCode; 
     }
   }
 
@@ -23,6 +23,23 @@ final class MoegirlADHooks {
 
     if (MoegirlADHooks::shouldShowADs()) {
       $siteNotice = $wgMoegirlADTopADCode . $siteNotice;
+    }
+  }
+
+  public static function onSkinAfterBottomScripts( $skin, &$text )  {
+    global $wgMoegirlADFooterADCode;
+
+    if (MoegirlADHooks::shouldShowADs()) {
+      $text .= $wgMoegirlADFooterADCode;
+    }
+  }
+
+
+  public static function onSkinBuildSidebar( Skin $skin, &$bar ) {
+    global $wgMoegirlADSideBarADName, $wgMoegirlADSideBarADCode;
+    
+    if (MoegirlADHooks::shouldShowADs()) {
+      $bar[$wgMoegirlADSideBarADName] = $wgMoegirlADSideBarADCode;
     }
   }
 
