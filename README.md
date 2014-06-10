@@ -6,7 +6,7 @@ Show advertisement in moegirl
 
 使用
 ---------
-在mediawiki的安装目录中打开 `LocalSettings.php`, 加入 `require_once "$IP/extensions/MoegirlAD/MoeMoegirlAD.php"`
+在mediawiki的安装目录中打开 `LocalSettings.php`, 加入 `require_once "$IP/extensions/MoegirlAD/MoegirlAD.php"`
 
 
 配置
