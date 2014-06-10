@@ -12,20 +12,33 @@ $wgExtensionCredits['parserhook'][] = array(
 
 
 /*
- * Options:
+ * Options: (Check these settings in LocalSettings.php file)
  *
  * $wgMoegirlADEnabled 
  *      - determine if show advertisement in moegirl.
+ *
+ * $wgMoegirlADADCode
+ *      - The adverticement code form the advertising company
+ *      E.g.
+ *      $wgMoegirlADADCode = <<<EOD
+ * <!-- 728*90 -->
+ * <div id='div-gpt-ad-1388996185454-0' style='width:728px; height:90px;'>
+ *   <script type='text/javascript'>
+ *     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388996185454-0'); });
+ *   </script>
+ * </div>
+ * EOD;
  * 
  */
 $wgMoegirlADEnabled  = true;
+$wgMoegirlADADCode = "";
 
 
 
 $wgAutoloadClasses['MoegirlADHooks'] = __DIR__ . '/MoegirlAD.hooks.php';
 
 
-$wgHooks['SkinAfterBottomScripts'][] = 'MoegirlADHooks::advertiseBottom';
 $wgHooks['SkinAfterContent'][] = 'MoegirlADHooks::onSkinAfterContent';
+$wgHooks['SiteNoticeAfter'][] = 'MoegirlADHooks::onSiteNoticeAfter';
 
 ?>

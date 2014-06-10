@@ -9,30 +9,42 @@
  *
  */
 final class MoegirlADHooks {
-  public static function  advertiseBottom($skin, &$text) {
-    $text = "Hello, World";
-    return true;
-  }
 
   public static function onSkinAfterContent(&$data, Skin $skin) {
-    $val = "Not Loggin";
+    global $wgMoegirlADADCode;
 
-    $currentUser = RequestContext::getMain()->getUser();
-
-    if (is_object($currentUser) && $currentUser->isLoggedIn()) {
-      $editCount = $currentUser->getEditCount();
-
-      if ($editCount != null && $editCount > 0) {
-        $val = "Has edited";
-      } else {
-        $val = "Not edited";
-      }
-
+    if (MoegirlADHooks::shouldShowADs()) {
+      $data .= $wgMoegirlADADCode; 
     }
-    $data = $val; 
+  }
+
+  public static function onSiteNoticeAfter(&$siteNotice, $skin) {
+    global $wgMoegirlADADCode;
+
+    if (MoegirlADHooks::shouldShowADs()) {
+      $siteNotice = $wgMoegirlADADCode . $siteNotice;
+    }
   }
 
 
+  /**
+   * Check if the advertice should be display
+   * 
+   * @return boolean 
+   */
+  public static function shouldShowADs() {
+    global $wgMoegirlADEnabled;
+    global $wgMoegirlADADCode;
+
+    if ($wgMoegirlADEnabled && $wgMoegirlADADCode != "") {
+      $currentUser = RequestContext::getMain()->getUser();
+
+      //只对未登录用户和没有编辑过任何条目的用户显示广告
+      return !(is_object($currentUser) && $currentUser->isLoggedIn() && $currentUser->getEditCount() != null && $currentUser->getEditCount() > 0);
+    } else {
+      return false;
+    }
+  }
 }
 
 
