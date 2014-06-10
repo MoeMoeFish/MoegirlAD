@@ -15,7 +15,9 @@ Show advertisement in moegirl
 
 `$wgMoegirlADEnabled  = true;`  //是否现实广告，如果为 true 可以省略
 
-`$wgMoegirlADADCode = "advertice code in here";`   // 广告提供商给的代码
+`$wgMoegirlADTopADCode = "advertice code in here";`   // 广告提供商给的代码，显示在顶部
+
+`$wgMoegirlADTopBottomCode = "advertice code in here";`   // 广告提供商给的代码，显示在底部
 
 
 
