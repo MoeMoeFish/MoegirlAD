@@ -17,8 +17,8 @@ $wgExtensionCredits['parserhook'][] = array(
  * $wgMoegirlADEnabled 
  *      - determine if show advertisement in moegirl.
  *
- * $wgMoegirlADADCode
- *      - The adverticement code form the advertising company
+ * $wgMoegirlADTopADCode
+ *      - The adverticement code form the advertising company in top bar
  *      E.g.
  *      $wgMoegirlADADCode = <<<EOD
  * <!-- 728*90 -->
@@ -28,10 +28,14 @@ $wgExtensionCredits['parserhook'][] = array(
  *   </script>
  * </div>
  * EOD;
+ *
+ * $wgMoegirlADBottomADCode
+        - The adverticement code in bottom bar
  * 
  */
 $wgMoegirlADEnabled  = true;
-$wgMoegirlADADCode = "";
+$wgMoegirlADTopADCode = "";
+$wgMoegirlADBottomADCode = "";
 
 
 

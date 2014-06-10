@@ -11,18 +11,18 @@
 final class MoegirlADHooks {
 
   public static function onSkinAfterContent(&$data, Skin $skin) {
-    global $wgMoegirlADADCode;
+    global $wgMoegirlADBottomADCode;
 
     if (MoegirlADHooks::shouldShowADs()) {
-      $data .= $wgMoegirlADADCode; 
+      $data .= $wgMoegirlADTopADCode; 
     }
   }
 
   public static function onSiteNoticeAfter(&$siteNotice, $skin) {
-    global $wgMoegirlADADCode;
+    global $wgMoegirlADTopADCode;
 
     if (MoegirlADHooks::shouldShowADs()) {
-      $siteNotice = $wgMoegirlADADCode . $siteNotice;
+      $siteNotice = $wgMoegirlADTopADCode . $siteNotice;
     }
   }
 
@@ -34,9 +34,8 @@ final class MoegirlADHooks {
    */
   public static function shouldShowADs() {
     global $wgMoegirlADEnabled;
-    global $wgMoegirlADADCode;
 
-    if ($wgMoegirlADEnabled && $wgMoegirlADADCode != "") {
+    if ($wgMoegirlADEnabled) {
       $currentUser = RequestContext::getMain()->getUser();
 
       //只对未登录用户和没有编辑过任何条目的用户显示广告
