@@ -36,9 +36,9 @@ final class MoegirlADHooks {
 
 
   public static function onSkinBuildSidebar( Skin $skin, &$bar ) {
-    global $wgMoegirlADSideBarADName, $wgMoegirlADSideBarADCode;
+    global $wgMoegirlADSideBarEnabled, $wgMoegirlADSideBarADName, $wgMoegirlADSideBarADCode;
     
-    if (MoegirlADHooks::shouldShowADs()) {
+    if (MoegirlADHooks::shouldShowADs() && $wgMoegirlADSideBarEnabled) {
       $bar[$wgMoegirlADSideBarADName] = $wgMoegirlADSideBarADCode;
     }
   }

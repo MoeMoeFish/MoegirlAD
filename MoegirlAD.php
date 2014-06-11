@@ -34,6 +34,9 @@ $wgExtensionCredits['parserhook'][] = array(
  *
  * $wgMoegirADFooterADCode
  *      - the adverticement code used to show in below of the footer
+ *
+ *$wgMoegirlADSideBarEnabled
+ *      - show/hide the sidebar adverticement
  * 
  * $wgMoegirlADSideBarADName
  *      - the side bar group name
@@ -43,11 +46,12 @@ $wgExtensionCredits['parserhook'][] = array(
  * 
  */
 $wgMoegirlADEnabled  = true;
-$wgMoegirlADTopADCode = "";
-$wgMoegirlADBottomADCode = "";
-$wgMoegirlADFooterADCode = "";
-$wgMoegirlADSideBarADName = "";
-$wgMoegirlADSideBarADCode = "";
+$wgMoegirlADTopADCode = "Top Adverticement";
+$wgMoegirlADBottomADCode = "Bottom Adverticement";
+$wgMoegirlADFooterADCode = "Foot Adverticement";
+$wgMoegirlADSideBarEnabled = true;
+$wgMoegirlADSideBarADName = "Sidebar group name";
+$wgMoegirlADSideBarADCode = "Sidebar Adverticement";
 
 
 
