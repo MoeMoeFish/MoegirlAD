@@ -13,9 +13,17 @@ Show advertisement in moegirl
 ---------
 在 `LocalSettings.php` 中使用下面的变量进行配置
 
-`$wgMoegirlADEnabled  = true;`  //是否现实广告，如果为 true 可以省略
+`$wgMoegirlADEnabled  = true;`  //是否显示广告，如果为 true 可以省略
 
-`$wgMoegirlADADCode = "advertice code in here";`   // 广告提供商给的代码
+`$wgMoegirlADTopADCode = "advertice code in here";`   // 广告提供商给的代码，显示在顶部
+
+`$wgMoegirlADBottomADCode = "advertice code in here";`   // 广告提供商给的代码，显示wiki内容底部
+
+`$wgMoegirlADFooterADCode = "advertice code in here";`   // 广告提供商给的代码，显示在页面底部
+
+`$wgMoegirlADSideBarADName;`   // 设置 Sidebar 中分组的标题
+
+`$wgMoegirlADSideBarADCode = "advertice code in here";`   // 广告提供商给的代码，显示在Sidebar
 
 
 
