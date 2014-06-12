@@ -27,9 +27,9 @@ final class MoegirlADHooks {
   }
 
   public static function onSkinAfterBottomScripts( $skin, &$text )  {
-    global $wgMoegirlADFooterADCode;
+    global $wgMoegirlADFooterEnabled, $wgMoegirlADFooterADCode;
 
-    if (MoegirlADHooks::shouldShowADs()) {
+    if (MoegirlADHooks::shouldShowADs() && $wgMoegirlADFooterEnabled) {
       $text .= $wgMoegirlADFooterADCode;
     }
   }
