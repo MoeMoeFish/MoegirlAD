@@ -16,6 +16,8 @@ final class MoegirlADHooks {
     if (MoegirlADHooks::shouldShowADs()) {
       $data .= $wgMoegirlADBottomADCode; 
     }
+
+    return true;
   }
 
   public static function onSiteNoticeAfter(&$siteNotice, $skin) {
@@ -24,6 +26,8 @@ final class MoegirlADHooks {
     if (MoegirlADHooks::shouldShowADs()) {
       $siteNotice = $wgMoegirlADTopADCode . $siteNotice;
     }
+
+    return true;
   }
 
   public static function onSkinAfterBottomScripts( $skin, &$text )  {
@@ -32,6 +36,8 @@ final class MoegirlADHooks {
     if (MoegirlADHooks::shouldShowADs() && $wgMoegirlADFooterEnabled) {
       $text .= $wgMoegirlADFooterADCode;
     }
+
+    return true;
   }
 
 
@@ -41,6 +47,8 @@ final class MoegirlADHooks {
     if (MoegirlADHooks::shouldShowADs() && $wgMoegirlADSideBarEnabled) {
       $bar[$wgMoegirlADSideBarADName] = $wgMoegirlADSideBarADCode;
     }
+
+    return true;
   }
 
 
