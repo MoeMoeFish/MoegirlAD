@@ -19,6 +19,8 @@ Show advertisement in moegirl
 
 `$wgMoegirlADBottomADCode = "advertice code in here";`   // 广告提供商给的代码，显示wiki内容底部
 
+`$wgMoegirlADFooterEnabled = true;`  // 是否显示页面底部的广告，如果为 true 可以省略
+
 `$wgMoegirlADFooterADCode = "advertice code in here";`   // 广告提供商给的代码，显示在页面底部
 
 `$wgMoegirlADSideBarEnabled = true`;    // 是否显示左侧sidebar 的广告，如果为 true 可以省略
@@ -26,6 +28,8 @@ Show advertisement in moegirl
 `$wgMoegirlADSideBarADName;`   // 设置 Sidebar 中分组的标题
 
 `$wgMoegirlADSideBarADCode = "advertice code in here";`   // 广告提供商给的代码，显示在Sidebar
+
+
 
 
 
